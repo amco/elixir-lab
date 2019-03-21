@@ -1,5 +1,5 @@
-_build/*
-assets/node_modules/*
-config/prod.secret.exs
-deps/*
-priv/static/*
+*/**/_build/*
+*/**/assets/node_modules/*
+*/**/config/prod.secret.exs
+*/**/deps/*
+*/**/priv/static/*
