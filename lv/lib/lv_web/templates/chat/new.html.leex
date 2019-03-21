@@ -1,0 +1,17 @@
+<h3>Chatting as <%= @username %></h3>
+<h4>Room: <%= @channel %>
+<%= form_for @changeset, "#", [phx_submit: :save], fn(f) -> %>
+  <%= label f, :text %>
+  <%= text_input f, :text %>
+  <div>
+    <%= submit "Send", phx_disable_with: "sending..." %>
+  </div>
+<% end %>
+<ul class="messages">
+  <%= for msg <- @messages do %>
+    <li>
+      <strong><%= msg.name %>:</strong>
+      <%= msg.text %>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,16 @@
+<%= if (@username && @channel) do %>
+  <section class="phx-hero">
+    <h2><%= gettext "Welcome!" %></h2>
+    <%= live_render(@conn, LvWeb.ChatLive, session: %{username: @username, channel:  @channel}) %>
+  </section>
+<%= else %>
+  <%= form_for @conn, "/sessions", [method: "post"], fn(f) -> %>
+    <%= label f, :username %>
+    <%= text_input f, :username %>
+    <%= label f, :channel %>
+    <%= text_input f, :channel %>
+    <div>
+      <%= submit "Send" %>
+    </div>
+  <% end %>
+<% end %>

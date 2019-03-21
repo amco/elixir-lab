@@ -1,0 +1,6 @@
+<h1>Live Demo!</h1>
+
+<h2>Time</h3>
+
+<%= live_render(@conn, LvWeb.TimerLive) %>
+
